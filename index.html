@@ -13,11 +13,11 @@
       max-width: 900px;
       transition: all 0.5s ease;
     }
-    
+
     .map-container.active {
       display: block;
     }
-    
+
     .photos-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -26,37 +26,37 @@
       margin: 30px auto;
       padding: 0 20px;
     }
-    
+
     .photo-item {
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
-    
+
     .photo-item:hover {
       transform: translateY(-5px);
     }
-    
+
     .photo-item img {
       width: 100%;
       height: 250px;
       object-fit: cover;
       display: block;
     }
-    
+
     .content-section {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
-    
+
     .welcome-text {
       text-align: center;
       margin: 30px 0;
       color: #333;
     }
-    
+
     .welcome-text h2 {
       color: #4b2c5e;
       margin-bottom: 15px;
@@ -70,15 +70,15 @@
   <header>
     <div class="header-container">
       <div class="logo-title">
-        <img src="Imagenes/Escudo.png" alt="Escudo de Navalmoralejo">
+        <img src="imagenes/Escudo.png" alt="Escudo de Navalmoralejo">
         <div id="Navalmoralejo">Navalmoralejo</div>
       </div>
-      
+
       <nav>
         <a href="https://es.wikipedia.org/wiki/Navalmoralejo" target="_blank">Wiki</a>
         <a href="https://cultura.castillalamancha.es/patrimonio/yacimientos-visitables/ciudad-de-vascos" target="_blank">Ciudad de Vascos</a>
         <a href="#" id="como-llegar-btn">Cómo llegar</a>
-        <a href="Fiestas.html">Fiestas patronales</a>
+        <a href="fiestas.html">Fiestas patronales</a>
       </nav>
     </div>
   </header>
@@ -89,18 +89,18 @@
         <h2>Bienvenidos a Navalmoralejo</h2>
         <p>Descubre la belleza y tradiciones de nuestro pueblo</p>
       </div>
-      
+
       <div class="photos-container">
         <div class="photo-item">
-          <img src="Imagenes/peña2.jpg" alt="Paisaje de Navalmoralejo">
+          <img src="imagenes/peña2.jpg" alt="Paisaje de Navalmoralejo">
         </div>
         <div class="photo-item">
-          <img src="Imagenes/pueblo.jpg" alt="Vista del pueblo de Navalmoralejo">
+          <img src="imagenes/pueblo.jpg" alt="Vista del pueblo de Navalmoralejo">
         </div>
       </div>
-      
+
       <div class="map-container" id="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6135.997152398605!2d-5.148318406898191!3d39.739682836263604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd15522a07f20557%3A0x2c3b4c2bacfdeafd!2s45573%20Navalmoralejo%2C%20Toledo!5e0!3m2!1ses!2ses!4v1742661149196!5m2!1ses!2ses" 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6135.997152398605!2d-5.148318406898191!3d39.739682836263604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd15522a07f20557%3A0x2c3b4c2bacfdeafd!2s45573%20Navalmoralejo%2C%20Toledo!5e0!3m2!1ses!2ses!4v1742661149196!5m2!1ses!2ses"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
@@ -111,7 +111,7 @@
       <div class="footer-section">
         <h3>Enlaces Rápidos</h3>
         <ul class="footer-links">
-          <li><a href="#">Inicio</a></li>
+          <li><a href="index.html">Inicio</a></li>
           <li><a href="#">Servicios Municipales</a></li>
           <li><a href="#">Noticias</a></li>
           <li><a href="#">Eventos</a></li>
@@ -143,16 +143,16 @@
       <h3>Síguenos</h3>
       <div class="social-icons">
         <a href="https://www.facebook.com/?locale=es_ES" class="social-icon" aria-label="Facebook">
-          <img src="Imagenes/facebook-logo.png" alt="Facebook">
+          <img src="imagenes/facebook-logo.png" alt="Facebook">
         </a>
         <a href="https://www.youtube.com/?app=desktop&hl=es" class="social-icon" aria-label="YouTube">
-          <img src="Imagenes/youtube-logo.png" alt="YouTube">
+          <img src="imagenes/youtube-logo.png" alt="YouTube">
         </a>
         <a href="https://www.whatsapp.com/?lang=es_LA" class="social-icon" aria-label="WhatsApp">
-          <img src="Imagenes/whatsapp-logo.png" alt="WhatsApp">
+          <img src="imagenes/whatsapp-logo.png" alt="WhatsApp">
         </a>
         <a href="https://www.instagram.com/" class="social-icon" aria-label="Instagram">
-          <img src="Imagenes/instagram-logo.png" alt="Instagram">
+          <img src="imagenes/instagram-logo.png" alt="Instagram">
         </a>
       </div>
     </div>
@@ -168,14 +168,13 @@
       const comoLlegarBtn = document.getElementById('como-llegar-btn');
       const mapContainer = document.getElementById('map-container');
       let mapVisible = false;
-      
+
       comoLlegarBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        
+
         if (!mapVisible) {
           mapContainer.classList.add('active');
           mapVisible = true;
-          // Desplazar suavemente hacia el mapa
           mapContainer.scrollIntoView({ behavior: 'smooth' });
         } else {
           mapContainer.classList.remove('active');
@@ -184,9 +183,11 @@
       });
     });
   </script>
+
+  <!-- Scripts JavaScript -->
+  <script src="js/script.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/map.js"></script>
+
 </body>
 </html>
-<!-- Scripts JavaScript -->
-<script src="js/script.js"></script>
-<script src="js/analytics.js"></script>
-<script src="js/map.js"></script>
