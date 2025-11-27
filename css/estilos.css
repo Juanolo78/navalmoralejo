@@ -1,0 +1,270 @@
+/* ================================
+   VARIABLES Y CONFIGURACIÓN GLOBAL
+================================= */
+
+:root {
+  --morado-oscuro: #4b2c5e;
+  --morado-claro: #7e57c2;
+  --morado-comunero: #6a1b9a;
+  --blanco: #ffffff;
+  --gris-suave: #f5f7fa;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--gris-suave);
+  color: #222;
+}
+
+/* ================================
+   HEADER + LOGO + TÍTULO
+================================= */
+
+header {
+  background: linear-gradient(135deg, var(--morado-oscuro), var(--morado-claro));
+  color: var(--blanco);
+  padding: 20px 10px;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; /* necesario para botón hamburguesa */
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+header img {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+#Navalmoralejo {
+  font-size: 4.5em;
+  font-weight: bold;
+  text-shadow: 3px 3px rgba(0,0,0,0.2);
+}
+
+/* ================================
+   MENÚ PRINCIPAL
+================================= */
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+nav a {
+  background-color: var(--blanco);
+  color: var(--morado-oscuro);
+  border: 2px solid var(--morado-oscuro);
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--morado-oscuro);
+  color: var(--blanco);
+}
+
+/* =============== MENÚ HAMBURGUESA =============== */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--blanco);
+  color: var(--blanco);
+  font-size: 2rem;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: var(--blanco);
+  color: var(--morado-oscuro);
+}
+
+/* ================================
+   FOOTER
+================================= */
+
+footer {
+  background-color: var(--morado-oscuro);
+  color: var(--blanco);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.footer-section {
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  border-bottom: 2px solid var(--morado-claro);
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 8px 0;
+}
+
+.footer-links a {
+  color: var(--blanco);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--morado-claro);
+}
+
+/* SOCIAL */
+
+.social-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.social-icon {
+  background-color: var(--morado-claro);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.social-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.social-icon:hover {
+  background-color: var(--blanco);
+  transform: scale(1.15);
+}
+
+/* COPYRIGHT */
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.footer-bottom .author {
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* ================================================
+   RESPONSIVE – MENÚ HAMBURGUESA Y AJUSTES MÓVILES
+================================================ */
+
+@media (max-width: 768px) {
+
+  .logo-title {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header img {
+    margin: 0 0 10px 0;
+  }
+
+  #Navalmoralejo {
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  /* botón hamburguesa visible */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  /* menú oculto por defecto */
+  nav {
+    display: none;
+    flex-direction: column;
+    background: var(--morado-oscuro);
+    width: 100%;
+    padding: 20px 0;
+    gap: 10px;
+  }
+
+  /* menú activo al pulsar */
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  .footer-sections {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+}
